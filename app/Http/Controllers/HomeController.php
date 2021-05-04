@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ad;
+use App\Models\Category;
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -59,6 +61,9 @@ class HomeController extends Controller
 
     public function adCreate()
     {
-        return view('pages.create');
+        return view('pages.create', [
+            'categories' => Category::all(),
+            'cities' => City::all()
+        ]);
     }
 }

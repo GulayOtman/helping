@@ -25,9 +25,25 @@ class AdService
         $this->ad = $ad;
     }
 
-    public function save(Request $request)
+    public function save(
+        $title,
+        $description,
+        $cityId,
+        $address,
+        $price,
+        $startDate,
+        $endDate,
+        $image
+    )
     {
-        $this->ad->title = $request->title;
+        $this->ad->title = $title;
+        $this->ad->description = $description;
+        $this->ad->city_id = $cityId;
+        $this->ad->address = $address;
+        $this->ad->price = $price;
+        $this->ad->start_date = $startDate;
+        $this->ad->end_date = $endDate;
+        $this->ad->image = $image;
         $this->ad->save();
 
         return $this->ad;
