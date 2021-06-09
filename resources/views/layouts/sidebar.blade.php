@@ -51,8 +51,8 @@
                         <span class="menu-text">İlanlar</span>
                     </a>
                 </li>
-                <li class="menu-item {{ request()->segment(1) === 'general' ? 'menu-item-active' : null }}" aria-haspopup="true">
-                    <a href="#" class="menu-link">
+                <li class="menu-item {{ request()->segment(1) === 'myAds' ? 'menu-item-active' : null }}" aria-haspopup="true">
+                    <a href="{{ route('myAds') }}" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

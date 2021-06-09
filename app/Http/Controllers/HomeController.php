@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('pages.index', [
-            'ads' => Ad::paginate(10)
+            'ads' => Ad::where('user_id', '<>', auth()->user()->id())->paginate(10)
         ]);
     }
 
@@ -45,6 +45,7 @@ class HomeController extends Controller
 
         return view('pages.index', [
             'ads' => Ad::
+            where('user_id', '<>', auth()->user()->id())->
             where('title', 'like', '%' . $keyword . '%')->
             where(function ($query) use ($startDate) {
                 $startDate != null ? $query->where('start_date', '>=', $startDate) : null;
@@ -64,6 +65,13 @@ class HomeController extends Controller
         return view('pages.create', [
             'categories' => Category::all(),
             'cities' => City::all()
+        ]);
+    }
+
+    public function myAds()
+    {
+        return view('pages.my-ads', [
+            'ads' => Ad::paginate(10)
         ]);
     }
 }

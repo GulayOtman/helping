@@ -24,4 +24,6 @@ Route::middleware(['auth'])->namespace('App\\Http\\Controllers')->group(function
     Route::get('search', 'HomeController@search')->name('search');
     Route::get('ad/create', 'HomeController@adCreate')->name('ad.create');
     Route::post('ad/create', 'AdController@save')->name('ad.create.post');
+
+    Route::get('myAds', 'HomeController@myAds')->name('myAds');
 });

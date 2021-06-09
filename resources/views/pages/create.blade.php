@@ -6,7 +6,6 @@
 
     <form action="{{ route('ad.create.post') }}" method="post" class="row">
         @csrf
-        <input type="hidden" value="{{ $id }}" name="id">
         <div class="col-xl-8">
             <div class="card">
                 <div class="card-body">
